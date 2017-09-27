@@ -1,5 +1,6 @@
 package com.kodilla.spring.calculator;
 
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.ApplicationContext;
 import org.springframework.context.annotation.AnnotationConfigApplicationContext;
 import org.springframework.stereotype.Component;
@@ -9,11 +10,9 @@ public class Calculator {
 
     private final Display display;
 
+    @Autowired
     public Calculator(final Display display) {
-        ApplicationContext context =
-                new AnnotationConfigApplicationContext("com.kodilla.spring");
-
-        this.display = context.getBean(Display.class);
+        this.display = display;
     }
 
     public double add(double a, double b) {
