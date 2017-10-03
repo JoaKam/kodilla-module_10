@@ -25,12 +25,10 @@ public class BoardConfig {
 
     @Bean
     public Board createBoard() {
-        ApplicationContext context =
-                new AnnotationConfigApplicationContext("com.kodilla.spring");
 
-        TaskList toDoList = (TaskList) context.getBean("createToDoList");
-        TaskList inProgressList = (TaskList) context.getBean("createInProgressList");
-        TaskList doneList = (TaskList) context.getBean("createDoneList");
+        TaskList toDoList = createToDoList();
+        TaskList inProgressList = createInProgressList();
+        TaskList doneList = createDoneList();
 
         return new Board(toDoList, inProgressList, doneList);
     }

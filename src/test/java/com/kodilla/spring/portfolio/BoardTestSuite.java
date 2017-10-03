@@ -19,9 +19,9 @@ public class BoardTestSuite {
         Board newBoard = (Board) context.getBean("createBoard");
 
         //When
-        List<String> toDoList = (List<String>) newBoard.getToDoList();
-        List<String> inProgressList = (List<String>) newBoard.getInProgressList();
-        List<String> doneList = (List<String>) newBoard.getDoneList();
+        List<String> toDoList = (List<String>) newBoard.getToDoList().tasks;
+        List<String> inProgressList = (List<String>) newBoard.getInProgressList().tasks;
+        List<String> doneList = (List<String>) newBoard.getDoneList().tasks;
 
         toDoList.add("new task to do");
         inProgressList.add("new task in progress");
